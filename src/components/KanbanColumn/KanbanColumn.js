@@ -6,20 +6,21 @@ import {observer} from 'mobx-react'
 class KanbanColumn extends Component {
 
     render() {
-        const { name, taskList, num } = this.props
+        const { name, taskGroups, taskList, num } = this.props
 
         return (
             <div className="Kanban-column">
                 <h1 className="name">{name}</h1>
                 <ul className="tasks">
-                    {taskList && taskList.tasks.length && taskList.tasks.map((task,index) => {
-                        return (
+                    {taskList && taskList.tasks.map((task,index) => {
+
+                        return (task &&
                             <li key={index}>
-                                {(num !== 1) && <button> &lt; </button>}
+                                {(num !== 0) && <button className="btn-arrow btn-arrow-left" onClick={this.generateOnMove(task,index,num-1)} > &lt; </button>}
 
                                 {task.name}
 
-                                {(num !== 4) && <button> &gt; </button>}
+                                {(num !== taskGroups.length - 1) && <button className="btn-arrow btn-arrow-right" onClick={this.generateOnMove(task,index,num+1)}> &gt; </button>}
                             </li>)
                     })
                     }
@@ -40,9 +41,12 @@ class KanbanColumn extends Component {
 
     generateOnMove = (task,from,to) => {
 
-        const {taskList} = this.props
-        taskList.removeTask(from)
+        const {taskGroups, taskList} = this.props
 
+        return () =>{
+            taskList.removeTask(from)
+            taskGroups[to].insertTask(from,task)
+        }
 
 }
 

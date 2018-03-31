@@ -1,11 +1,21 @@
 .Kanban-column{
     display: inline-block;
+    vertical-align: top;
+    border: 1px solid #dedede;
+    box-sizing: border-box;
+    margin-top: 25px;
     margin-left:25px;
+    padding-bottom: 25px;
     width: calc(-31.25px + 25%);
+    background: #ffffff;
 }
 
 .Kanban-column:last-child{
     margin-right: 25px;
+}
+
+.Kanban-column .name {
+    margin-top: 0;
 }
 
 .Kanban-column:nth-child(1) .name{
@@ -22,4 +32,36 @@ background: #8E6E95;
 
 .Kanban-column:nth-child(4) .name{
     background: #E8741E;
+}
+
+.Kanban-column ul {
+    list-style: none;
+    padding-left: 0;
+}
+
+.Kanban-column li {
+    position: relative;
+}
+
+.Kanban-column .btn-arrow{
+    position: absolute;
+    font-weight: bold;
+    font-size: 80%;
+    padding: 0px 8px;
+    background: transparent;
+    border: none;
+    color: #bdbdbd;
+    transform: scaleY(1.8);
+}
+
+.Kanban-column .btn-arrow:hover{
+    color: #8d8d8d;
+}
+
+.Kanban-column .btn-arrow-left {
+    left: 0;
+}
+
+.Kanban-column .btn-arrow-right {
+    right: 0;
 }

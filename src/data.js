@@ -1,11 +1,10 @@
 import TaskList from './models/TaskList'
 
-const taskLists = {}
+const taskGroups = []
 
 for (let i = 0; i < 4; i++){
-    const taskList = TaskList.of('Do Chores', 'Travel to Hawaii')
-    taskLists['taskList' + (i+1)] =  taskList
+    taskGroups.push(TaskList.of('Do Chores', 'Travel to Hawaii'))
 }
 
 
-export default taskLists
+export default {taskGroups}

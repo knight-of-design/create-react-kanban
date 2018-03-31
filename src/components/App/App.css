@@ -1,5 +1,7 @@
 .App {
   text-align: center;
+  background: #efefef;
+  min-height: 100%;
 }
 
 .App-logo {
@@ -21,6 +23,20 @@
 .App-intro {
   font-size: large;
 }
+
+button {
+  background: #a4cced;
+  border: 1px solid cornflowerblue;
+  padding: 8px;
+  border-radius: 7px;
+  outline: none;
+}
+
+button:hover {
+  background: #bfdfff;
+}
+
+
 
 @keyframes App-logo-spin {
   from { transform: rotate(0deg); }

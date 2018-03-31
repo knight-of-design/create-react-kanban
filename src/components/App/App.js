@@ -6,7 +6,7 @@ import './App.css'
 class App extends Component {
   render() {
       const {data} = this.props
-      const columns = [1,2,3,4]
+      const taskGroups = data.taskGroups || []
 
     return (
       <div className="App">
@@ -14,9 +14,9 @@ class App extends Component {
               <img src={logo} className="App-logo" alt="logo" />
               <h1 className="App-title">Quantum Kanban</h1>
           </header>
-          <section>
+          <section className="Kanban">
               {
-                  columns.map(column => (<KanbanColumn key={column} name={"Col" + column} taskList={data['taskList'+column]}/>))
+                  taskGroups.map((taskList,index) => (<KanbanColumn key={index} num={index} name={"Col" + (index+1)} taskGroups={taskGroups} taskList={taskList}/>))
               }
           </section>
       </div>

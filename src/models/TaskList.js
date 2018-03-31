@@ -18,6 +18,10 @@ class TaskList {
     removeTask(index){
         this.tasks.splice(index, 1)
     }
+
+    insertTask(index,task){
+        this.tasks.splice(index, 0, task)
+    }
 }
 
 export default TaskList
