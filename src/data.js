@@ -1,4 +1,3 @@
-import TodoList from './models/TodoList'
 import TaskList from './models/TaskList'
 
 const taskList = new TaskList()
