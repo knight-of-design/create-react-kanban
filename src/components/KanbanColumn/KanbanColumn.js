@@ -6,41 +6,59 @@ import {observer} from 'mobx-react'
 class KanbanColumn extends Component {
 
     render() {
-        const { name, taskGroups, taskList, num } = this.props
+        const { taskGroups, taskList, num } = this.props
 
         return (
             <div className="Kanban-column">
-                <h1 className="name">{name}</h1>
+                <h1 className="name" onDoubleClick={this.onRenameList}>{taskList.label}</h1>
                 <ul className="tasks">
                     {taskList && taskList.tasks.map((task,index) => {
 
                         return (task &&
-                            <li key={index}>
-                                {(num !== 0) && <button className="btn-arrow btn-arrow-left" onClick={this.generateOnMove(task,index,num-1)} > &lt; </button>}
+                            <li key={index} onDoubleClick={this.generateOnEditTask(index)}>
+                                {(num !== 0) && <button className="btn-arrow btn-arrow-left" onClick={this.generateOnMoveTask(task,index,num-1)} > &lt; </button>}
 
                                 {task.name}
 
-                                {(num !== taskGroups.length - 1) && <button className="btn-arrow btn-arrow-right" onClick={this.generateOnMove(task,index,num+1)}> &gt; </button>}
+                                {(num !== taskGroups.length - 1) && <button className="btn-arrow btn-arrow-right" onClick={this.generateOnMoveTask(task,index,num+1)}> &gt; </button>}
                             </li>)
                     })
                     }
                 </ul>
-                <button className="btn-add" onClick={this.onAdd}>
+                <button className="btn-add" onClick={this.onAddTask}>
                     + Add a card
                 </button>
             </div>
         )
     }
 
-    onAdd = () => {
+    onRenameList = () => {
         const {taskList} = this.props
 
-        const task = window.prompt('Card', '') || "New card"
+        taskList.label = window.prompt('List', taskList.label) || 'List'
+    };
+
+    onAddTask = () => {
+        const {taskList} = this.props
+
+        const task = window.prompt('Task', '') || 'New card'
         taskList.addTask(task)
     };
 
-    generateOnMove = (task,from,to) => {
+    generateOnEditTask = (index) => {
+        const {taskList} = this.props
 
+        return () => {
+            const task = taskList.tasks[index]
+            const newTaskName = window.prompt('Task', task.name)
+            if (newTaskName) {
+                taskList.replaceTask(index,{name:newTaskName})
+            }
+        }
+
+    }
+
+    generateOnMoveTask = (task, from, to) => {
         const {taskGroups, taskList} = this.props
 
         return () =>{

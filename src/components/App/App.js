@@ -16,7 +16,7 @@ class App extends Component {
           </header>
           <section className="Kanban">
               {
-                  taskGroups.map((taskList,index) => (<KanbanColumn key={index} num={index} name={"Col" + (index+1)} taskGroups={taskGroups} taskList={taskList}/>))
+                  taskGroups.map((taskList,index) => (<KanbanColumn key={index} num={index}  taskGroups={taskGroups} taskList={taskList}/>))
               }
           </section>
       </div>
