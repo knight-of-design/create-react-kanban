@@ -1,5 +1,5 @@
-import React, { Component } from 'react';
-import './KanbanColumn.css';
+import React, { Component } from 'react'
+import './KanbanColumn.css'
 import {observer} from 'mobx-react'
 
 @observer
@@ -14,7 +14,7 @@ class KanbanColumn extends Component {
                 <ul className="tasks">
                     {taskList && taskList.tasks.length && taskList.tasks.map((task,index) => {
                         return (
-                            <li>
+                            <li key={index}>
                                 {(num !== 1) && <button> &lt; </button>}
 
                                 {task.name}
@@ -28,7 +28,7 @@ class KanbanColumn extends Component {
                     + Add a card
                 </button>
             </div>
-        );
+        )
     }
 
     onAdd = () => {

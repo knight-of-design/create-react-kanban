@@ -2,10 +2,11 @@ import {observable} from 'mobx'
 
 class TaskList {
     static of(...tasks){
-       const result = new TaskList();
+       const result = new TaskList()
         tasks.forEach((task)=>{
             result.addTask(task)
         })
+        return result
     }
 
     @observable tasks = [];
@@ -19,4 +20,4 @@ class TaskList {
     }
 }
 
-export default TaskList;
+export default TaskList

@@ -8,8 +8,6 @@
     margin-right: 25px;
 }
 
-
-
 .Kanban-column:nth-child(1) .name{
 background: #8E6E95;
 }
@@ -17,9 +15,11 @@ background: #8E6E95;
 .Kanban-column:nth-child(2) .name{
     background: #39A59C;
 }
+
 .Kanban-column:nth-child(3) .name{
     background: #344759;
 }
+
 .Kanban-column:nth-child(4) .name{
     background: #E8741E;
 }
