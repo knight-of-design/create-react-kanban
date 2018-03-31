@@ -65,3 +65,13 @@ background: #8E6E95;
 .Kanban-column .btn-arrow-right {
     right: 0;
 }
+
+.Kanban-column .btn-add {
+    background: #a4edcc;
+    border: 1px solid #54bd7c;
+}
+
+.Kanban-column .btn-add:hover {
+
+    background: #bfffdf;
+}

@@ -25,7 +25,7 @@ class KanbanColumn extends Component {
                     })
                     }
                 </ul>
-                <button onClick={this.onAdd}>
+                <button className="btn-add" onClick={this.onAdd}>
                     + Add a card
                 </button>
             </div>

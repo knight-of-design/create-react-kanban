@@ -25,16 +25,13 @@
 }
 
 button {
-  background: #a4cced;
-  border: 1px solid cornflowerblue;
+  border: 1px solid #333;
   padding: 8px;
   border-radius: 7px;
   outline: none;
 }
 
-button:hover {
-  background: #bfdfff;
-}
+
 
 
 
