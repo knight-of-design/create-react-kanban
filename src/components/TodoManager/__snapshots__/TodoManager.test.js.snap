@@ -1,0 +1,49 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`renders a todo list 1`] = `
+<div
+  className="Todo-manager"
+>
+  <span
+    className="progress"
+  >
+    Progress: 
+    0%
+  </span>
+  <input
+    className="new-todo"
+    onKeyPress={[Function]}
+    placeholder="Add Something To Do"
+  />
+  <ul
+    className="todo-list"
+  >
+    <li
+      onDoubleClick={[Function]}
+    >
+      <input
+        checked={false}
+        className="toggle"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label>
+        Do Chores
+      </label>
+    </li>
+    <li
+      onDoubleClick={[Function]}
+    >
+      <input
+        checked={false}
+        className="toggle"
+        onChange={[Function]}
+        type="checkbox"
+      />
+      <label>
+        Travel to Hawaii
+      </label>
+    </li>
+  </ul>
+</div>
+`;
