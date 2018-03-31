@@ -1,3 +1,10 @@
+# create-react-kanban
+
+### Todos
+* Stylus integration
+* Prettier integration
+
+## Create React App Info
 This project was bootstrapped with [Create React App](https://github.com/facebookincubator/create-react-app).
 
 Below you will find some information on how to perform common tasks.<br>
