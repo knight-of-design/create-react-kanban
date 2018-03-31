@@ -1,5 +1,4 @@
 import React, { Component } from 'react'
-//import TodoManager from '../TodoManager/TodoManager'
 import KanbanColumn from '../KanbanColumn/KanbanColumn'
 import logo from '../../logo.svg'
 import './App.css'
